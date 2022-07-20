@@ -2,7 +2,11 @@
 钉钉机器人
 目前还在开发中，现在可以实现向指定钉钉群发送不同类型的消息，以及简单回复功能，并且可以检测全局异常并发送告警信息到指定群中
 
-## maven依赖
+## **打包并导入** 
+打包并导入Jar包至需要此工具类的项目中,具体教程详见下链接
+>[导入教程](https://blog.csdn.net/weixin_45480245/article/details/118707400?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-4-118707400-blog-115514519.pc_relevant_multi_platform_whitelistv1_exp2&spm=1001.2101.3001.4242.3&utm_relevant_index=7)
+
+## **maven依赖**
 添加以下依赖以确保运行
 ```Java
         <dependency>
