@@ -23,6 +23,7 @@ public class Dingtest1 {
 ```
 使用全局异常监控工具类
 ```Java
+@RestController
 @ControllerAdvice
 public class Dingtest2 {
 
