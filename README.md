@@ -4,7 +4,7 @@
 
 ## maven依赖
 添加以下依赖以确保运行
-```
+```Java
         <dependency>
             <groupId>com.jwq.robot.vtec</groupId>
             <artifactId>Vtec</artifactId>
