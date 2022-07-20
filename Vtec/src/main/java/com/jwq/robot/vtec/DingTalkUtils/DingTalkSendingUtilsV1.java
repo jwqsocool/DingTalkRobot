@@ -35,17 +35,12 @@ public class DingTalkSendingUtilsV1 {
     }
 
 
-    public static OapiRobotSendResponse sendV1_1(GroupConfig group, String msgtype, String content, boolean isAtAll) {
-        if(msgtype == getMsgTypeText()){
+    public static OapiRobotSendResponse sendTextV1_1(GroupConfig group, String content, boolean isAtAll) {
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByTextAtAllV1(client, content, isAtAll);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }
-        }else {
-            System.out.println("消息类型不对应，请检查");
-            return null;
         }
     }
 
@@ -241,18 +236,14 @@ public class DingTalkSendingUtilsV1 {
         }
     }
 
-    public static OapiRobotSendResponse sendV1_1(GroupConfig group, String msgtype, String title, String markdownText, boolean isAtAll){
-        if(msgtype == getMsgTypeMarkdown()){
+    public static OapiRobotSendResponse sendMarkdownV1_1(GroupConfig group, String title, String markdownText, boolean isAtAll){
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByMarkdownAtAllV1(client,title,markdownText,isAtAll);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        }else{
-            System.out.println("消息类型不对应，请检查");
-            return null;
-        }
+        
     }
 
     public static OapiRobotSendResponse sendMarkdownV1_1(GroupConfig group, String title, String markdownText, List<String> mobileList){
