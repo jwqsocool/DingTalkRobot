@@ -373,5 +373,63 @@ public class DingTalkSendingUtilsV1 {
         }
         return response;
     }
+    
+    public static OapiRobotSendResponse sendActioncardV1(GroupConfig group, String title, String actionCardText, String btnTitle, String btnUrl, boolean btnOrientation, boolean hideAvatar){
+        OapiRobotSendRequest.Btns btn = new OapiRobotSendRequest.Btns();
+        btn.setTitle(btnTitle);//此为按钮
+        btn.setActionURL(btnUrl);
+        List<OapiRobotSendRequest.Btns> btns = ListUtil.toList(btn);
+        try {
+            DingTalkClient client = new DefaultDingTalkClient(group.toString());
+            return sendMessageByActionCardMulti(client, title, actionCardText, btns, btnOrientation, hideAvatar);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 独立跳转ActionCard类型 消息发送
+     *
+     * @param title          标题
+     * @param actionCardText 文本
+     * @param btns           按钮列表
+     * @param btnOrientation 是否横向排列(true 横向排列, false 纵向排列)
+     * @param hideAvatar     是否隐藏发消息者头像(true 隐藏头像, false 不隐藏)
+     * @return OapiRobotSendResponse
+     */
+    private static OapiRobotSendResponse sendMessageByActionCardMulti(DingTalkClient client, String title, String actionCardText, List<OapiRobotSendRequest.Btns> btns, boolean btnOrientation, boolean hideAvatar) {
+        if (StringUtils.isEmpty(title) || StringUtils.isEmpty(actionCardText) || CollectionUtils.isEmpty(btns)) {
+            return null;
+        }
+        //参数	            类型	    必选	    说明
+        //msgtype	        string	true	此消息类型为固定actionCard
+        //title	            string	true	首屏会话透出的展示内容
+        //text	            string	true	markdown格式的消息
+        //btns	            array	true	按钮的信息：title-按钮方案，actionURL-点击按钮触发的URL
+        //btnOrientation	string	false	0-按钮竖直排列，1-按钮横向排列
+        //hideAvatar	    string	false	0-正常发消息者头像，1-隐藏发消息者头像
+        OapiRobotSendRequest.Actioncard actionCard = new OapiRobotSendRequest.Actioncard();
+        actionCard.setTitle(title);
+        actionCard.setText(actionCardText);
+        // 此处默认为0
+        actionCard.setBtnOrientation(btnOrientation ? "1" : "0");
+        // 此处默认为0
+        actionCard.setHideAvatar(hideAvatar ? "1" : "0");
+
+        actionCard.setBtns(btns);
+
+        OapiRobotSendRequest request = new OapiRobotSendRequest();
+        request.setMsgtype(getMsgTypeActionCard());
+        request.setActionCard(actionCard);
+        OapiRobotSendResponse response = new OapiRobotSendResponse();
+        try {
+            response = client.execute(request);
+            System.out.println("【DingTalkSendingUtils】独立跳转ActionCard类型发送消息 响应参数：" + JSON.toJSONString(response));
+        } catch (ApiException e) {
+            log.error("[发送ActionCard 类型消息]: 独立跳转ActionCard类型发送消息失败, 异常捕获{}", e.getMessage());
+        }
+        return response;
+    }
+
 
 }
