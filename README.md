@@ -94,7 +94,7 @@ DingTalkSendingUtilsV1.sendTextV1(group, "text", isAtAll);
 ### **Link格式发送方法sendLinkV1**
 
 link类型消息包含**消息标题**、**消息内容**、**点击消息后跳转的url**以及**插入图片的url**，但插入图片的url**不是必须的，可以不填** <br>
-@功能方面与text不同，钉钉机器人发送link类型消息时**不支持@功能**
+@功能方面与text不同，钉钉机器人发送link类型消息**暂时不支持@功能**
 ```Java
 /**
 * 发送link 类型消息
