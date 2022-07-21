@@ -56,34 +56,34 @@ Text只包含普通文本, 所以在使用sendTextV1时，只需指定文本内�
 ```Java
 /**
  * 发送普通文本消息
- * @param group      自定义组群
- * @param content    文本消息
+ * @param group      自定义组群  GroupConfig
+ * @param content    文本消息    String
  * @return OapiRobotSendResponse
  */
-DingTalkSendingUtilsV1.sendTextV1(group, "text");
+DingTalkSendingUtilsV1.sendTextV1(group, content);
 ```
 当然也可以通过输入想@的人的电话来实现@部分人的功能，还可以直接输入true来@全体成员<br>
         
 ```Java
 /**
 * 发送普通文本消息
-* @param group      自定义组群
-* @param content    文本消息
-* @param mobileList At的人的手机号
+* @param group       自定义组群     GroupConfig
+* @param content     文本消息       String
+* @param mobileList  At的人的手机号 List<String>
 * @return OapiRobotSendResponse
 */
 
-DingTalkSendingUtilsV1.sendTextV1(group, "text", Arrays.asList("1**********"));
+DingTalkSendingUtilsV1.sendTextV1(group, "text", Arrays.asList("130********"));
 
 /**
 * 发送普通文本消息
-* @param group      自定义组群
-* @param content    文本消息
-* @param isAtAll    值为true及At全体
+* @param group      自定义组群        GroupConfig
+* @param content    文本消息          String
+* @param isAtAll    值为true及At全体   boolean
 * @return OapiRobotSendResponse
 */
 
-DingTalkSendingUtilsV1.sendTextV1(group, "text", true);
+DingTalkSendingUtilsV1.sendTextV1(group, "text", isAtAll);
 ```
 
 ### **Link格式发送方法sendLinkV1**
@@ -93,15 +93,15 @@ link类型消息包含**消息标题**、**消息内容**、**点击消息后跳
 ```Java
 /**
 * 发送link 类型消息
-* @param group      自定义组群
-* @param urltitle   消息标题
-* @param urltext    消息内容
-* @param messageUrl 点击消息后跳转的url
-* @param picUrl     插入图片的url(非必需可不填)
+* @param group      自定义组群                 GroupConfig
+* @param urltitle   消息标题                   String
+* @param urltext    消息内容                   String
+* @param messageUrl 点击消息后跳转的url         String
+* @param picUrl     插入图片的url(非必需可不填)  String
 * @return OapiRobotSendResponse
 */
      
-DingTalkSendingUtilsV1.sendLinkV1(group, urltitle, urltext, messageUrl，picurl);
+DingTalkSendingUtilsV1.sendLinkV1(group, "urltitle", "urltext", "messageUrl"，"picurl");
 ```
 
 ### **Markdown格式发送方法sendMarkdownV1**
@@ -112,13 +112,13 @@ markdown类型消息包含**消息标题**与**支持markdown编辑格式的文�
 ```Java
 /**
 * 发送Markdown 编辑格式的消息
-* @param group      自定义组群
-* @param markdownTitle 消息标题
-* @param markdownText  支持markdown编辑格式的文本信息
+* @param group      自定义组群                       GroupConfig
+* @param markdownTitle 消息标题                      String
+* @param markdownText  支持markdown编辑格式的文本信息  String
 * @return OapiRobotSendResponse
 */
 
-DingTalkSendUtilsV1.sendMarkdownV1(group, markdownTitle, markdownText)
+DingTalkSendUtilsV1.sendMarkdownV1(group, "markdownTitle", "markdownText");
 ```
 ### **ActionCard格式发送方法**
 
