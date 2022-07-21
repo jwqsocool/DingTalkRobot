@@ -52,8 +52,8 @@ GroupConfig group = new GroupConfig(
             "_此处为机器人测试群中的加签secret_");
 ```
 
-发送工具类的类名为DingTalkSendingUtilsV1，其中包含三种可供选择的文本格式：text, link, markdown <br> 
-设置三种方法供使用: sendTextV1, sendLinkV1, sendMarkdownV1   下面对方法进行说明
+发送工具类的类名为DingTalkSendingUtilsV1，其中包含四种可供选择的文本格式：text, link, markdown, actioncard <br> 
+设置四种方法供使用: sendTextV1, sendLinkV1, sendMarkdownV1, sendActioncardV1   下面对方法进行说明
 
 ### **Text格式发送方法sendTextV1**
 
