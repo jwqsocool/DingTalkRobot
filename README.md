@@ -18,6 +18,11 @@
             <systemPath>${project.basedir}/lib/Vtec.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.4</version>
+        </dependency>
+        <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>dingtalk</artifactId>
             <version>1.3.73</version>
@@ -112,7 +117,7 @@ markdown类型消息包含**消息标题**与**支持markdown编辑格式的文�
 ```Java
 /**
 * 发送Markdown 编辑格式的消息
-* @param group      自定义组群                       GroupConfig
+* @param group         自定义组群                    GroupConfig
 * @param markdownTitle 消息标题                      String
 * @param markdownText  支持markdown编辑格式的文本信息  String
 * @return OapiRobotSendResponse
@@ -122,7 +127,21 @@ DingTalkSendUtilsV1.sendMarkdownV1(group, "markdownTitle", "markdownText");
 ```
 ### **ActionCard格式发送方法**
 
-开发中
+ActionCard类型消息除了包含**消息标题**与**同样支持markdown编辑格式的文本信息**以外，还多出了按钮内容、按钮链接和按钮排布，以及机器人头像的隐藏<br>
+目前ActionCard暂不支持@功能
+```Java
+/**
+* 独立跳转ActionCard类型 消息发送
+* @param group          自定义组群                                      
+* @param title          标题
+* @param actionCardText 文本
+* @param btns           按钮列表
+* @param btnOrientation 是否横向排列(true 横向排列, false 纵向排列)
+* @param hideAvatar     是否隐藏发消息者头像(true 隐藏头像, false 不隐藏)
+* @return OapiRobotSendResponse
+*/
+DingTalkSendingUtilsV1.sendActioncardV1(group, title, actionCardText, btnTitle, btnUrl, btnOrientation, hideAvatar);     
+```
 
 ### **FeedCard格式发送方法**
 
