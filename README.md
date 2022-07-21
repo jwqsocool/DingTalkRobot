@@ -1,4 +1,4 @@
-# **DingTalkRobot**
+# **DingTalkRobot-Vtec**
 该钉钉机器人目前还在开发中，现在可以实现向指定钉钉群发送不同类型的消息，以及简单回复功能，并且可以检测全局异常并发送告警信息到指定群中
 
 ## **使用前准备**
@@ -44,13 +44,13 @@ secret为机器人测试群中的加签，可在钉钉开发者网页页面对�
 ```Java
 GroupConfig group = new GroupConfig(
             "_此处填写自己机器人的webhook_",
-            "_此处为机器人测试群中的加签_");
+            "_此处为机器人测试群中的加签secret_");
 ```
 
 发送工具类的类名为DingTalkSendingUtilsV1，其中包含三种可供选择的文本格式：text, link, markdown <br> 
 设置三种方法供使用: sendTextV1, sendLinkV1, sendMarkdownV1   下面对方法进行说明
 
-### Text格式发送方法sendTextV1
+### **Text格式发送方法sendTextV1**
 
 Text只包含普通文本, 所以在使用sendTextV1时，只需指定文本内容content和想要发送到的组群即可
 ```Java
@@ -62,8 +62,72 @@ Text只包含普通文本, 所以在使用sendTextV1时，只需指定文本内�
  */
 DingTalkSendingUtilsV1.sendTextV1(group, "text");
 ```
-当然也可以通过List<String>输入想@的人的电话来实现@部分人的功能，还可以直接输入true来@全体成员
+当然也可以通过输入想@的人的电话来实现@部分人的功能，还可以直接输入true来@全体成员<br>
+        
+```Java
+/**
+* 发送普通文本消息
+* @param group      自定义组群
+* @param content    文本消息
+* @param mobileList At的人的手机号
+* @return OapiRobotSendResponse
+*/
 
+DingTalkSendingUtilsV1.sendTextV1(group, "text", Arrays.asList("1**********"));
+
+/**
+* 发送普通文本消息
+* @param group      自定义组群
+* @param content    文本消息
+* @param isAtAll    值为true及At全体
+* @return OapiRobotSendResponse
+*/
+
+DingTalkSendingUtilsV1.sendTextV1(group, "text", true);
+```
+
+### **Link格式发送方法sendLinkV1**
+
+link类型消息包含**消息标题**、**消息内容**、**点击消息后跳转的url**以及**插入图片的url**，但插入图片的url**不是必须的，可以不填**<br>
+@功能方面与text不同，钉钉机器人发送link类型消息时**不支持@功能**
+```Java
+/**
+* 发送link 类型消息
+* @param group      自定义组群
+* @param urltitle   消息标题
+* @param urltext    消息内容
+* @param messageUrl 点击消息后跳转的url
+* @param picUrl     插入图片的url(非必需可不填)
+* @return OapiRobotSendResponse
+*/
+     
+DingTalkSendingUtilsV1.sendLinkV1(group, urltitle, urltext, messageUrl，picurl);
+```
+
+### **Markdown格式发送方法sendMarkdownV1**
+
+markdown类型消息包含**消息标题**与**支持markdown编辑格式的文本信息**，markdown格式具体要求参考钉钉开放文档
+> [消息类型和数据格式](https://open.dingtalk.com/document/group/message-types-and-data-format)
+@规则与sendTextV1方法一致,就不做展示了
+
+```Java
+/**
+* 发送Markdown 编辑格式的消息
+* @param group      自定义组群
+* @param markdownTitle 消息标题
+* @param markdownText  支持markdown编辑格式的文本信息
+* @return OapiRobotSendResponse
+*/
+
+DingTalkSendUtilsV1.sendMarkdownV1(group, markdownTitle, markdownText)
+```
+### **ActionCard格式发送方法**
+
+开发中......
+
+### **FeedCard格式发送方法**
+
+开发中......
 
 ## **使用例**
 使用发送到指定钉钉群的工具类
