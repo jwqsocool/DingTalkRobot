@@ -88,7 +88,7 @@ DingTalkSendingUtilsV1.sendTextV1(group, "text", true);
 
 ### **Link格式发送方法sendLinkV1**
 
-link类型消息包含**消息标题**、**消息内容**、**点击消息后跳转的url**以及**插入图片的url**，但插入图片的url**不是必须的，可以不填**<br>
+link类型消息包含**消息标题**、**消息内容**、**点击消息后跳转的url**以及**插入图片的url**，但插入图片的url**不是必须的，可以不填** <br>
 @功能方面与text不同，钉钉机器人发送link类型消息时**不支持@功能**
 ```Java
 /**
@@ -106,9 +106,8 @@ DingTalkSendingUtilsV1.sendLinkV1(group, urltitle, urltext, messageUrl，picurl)
 
 ### **Markdown格式发送方法sendMarkdownV1**
 
-markdown类型消息包含**消息标题**与**支持markdown编辑格式的文本信息**，markdown格式具体要求参考钉钉开放文档
-> [消息类型和数据格式](https://open.dingtalk.com/document/group/message-types-and-data-format)
-@规则与sendTextV1方法一致,就不做展示了
+markdown类型消息包含**消息标题**与**支持markdown编辑格式的文本信息**，markdown格式具体要求参考钉钉开放文档, @规则与sendTextV1方法一致,就不做展示了
+>[消息类型和数据格式](https://open.dingtalk.com/document/group/message-types-and-data-format)
 
 ```Java
 /**
@@ -123,11 +122,11 @@ DingTalkSendUtilsV1.sendMarkdownV1(group, markdownTitle, markdownText)
 ```
 ### **ActionCard格式发送方法**
 
-开发中......
+开发中
 
 ### **FeedCard格式发送方法**
 
-开发中......
+开发中
 
 ## **使用例**
 使用发送到指定钉钉群的工具类
