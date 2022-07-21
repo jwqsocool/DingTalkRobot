@@ -25,7 +25,7 @@ public class DingTalkSendingUtilsV1 {
      * @return OapiRobotSendResponse
      */
 
-    public static OapiRobotSendResponse sendTextV1_1(GroupConfig group, String content){
+    public static OapiRobotSendResponse sendTextV1(GroupConfig group, String content){
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByTextAtNullV1(client,content);
@@ -35,7 +35,7 @@ public class DingTalkSendingUtilsV1 {
     }
 
 
-    public static OapiRobotSendResponse sendTextV1_1(GroupConfig group, String content, boolean isAtAll) {
+    public static OapiRobotSendResponse sendTextV1(GroupConfig group, String content, boolean isAtAll) {
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByTextAtAllV1(client, content, isAtAll);
@@ -44,7 +44,7 @@ public class DingTalkSendingUtilsV1 {
         }
     }
 
-    public static OapiRobotSendResponse sendTextV1_1(GroupConfig group, String content, List<String> mobileList) {
+    public static OapiRobotSendResponse sendTextV1(GroupConfig group, String content, List<String> mobileList) {
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByTextAtSomeV1(client, mobileList, content);
@@ -142,7 +142,7 @@ public class DingTalkSendingUtilsV1 {
      * @return OapiRobotSendResponse
      */
 
-    public static OapiRobotSendResponse sendLinkV1_1(GroupConfig group, String title, String text, String messageUrl, String picUrl){
+    public static OapiRobotSendResponse sendLinkV1(GroupConfig group, String title, String text, String messageUrl, String picUrl){
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByLinkWithPicV1(client,title,text,messageUrl,picUrl);
@@ -151,7 +151,7 @@ public class DingTalkSendingUtilsV1 {
         }
     }
 
-    public static OapiRobotSendResponse sendLinkV1_1(GroupConfig group, String title, String text, String messageUrl){
+    public static OapiRobotSendResponse sendLinkV1(GroupConfig group, String title, String text, String messageUrl){
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByLinkWithoutPicV1(client,title,text,messageUrl);
@@ -227,7 +227,7 @@ public class DingTalkSendingUtilsV1 {
      * @return OapiRobotSendResponse
      */
 
-    public static OapiRobotSendResponse sendMarkdownV1_1(GroupConfig group, String title, String markdownText){
+    public static OapiRobotSendResponse sendMarkdownV1(GroupConfig group, String title, String markdownText){
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByMarkdownAtNullV1(client,title, markdownText);
@@ -236,7 +236,7 @@ public class DingTalkSendingUtilsV1 {
         }
     }
 
-    public static OapiRobotSendResponse sendMarkdownV1_1(GroupConfig group, String title, String markdownText, boolean isAtAll){
+    public static OapiRobotSendResponse sendMarkdownV1(GroupConfig group, String title, String markdownText, boolean isAtAll){
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByMarkdownAtAllV1(client,title,markdownText,isAtAll);
@@ -246,7 +246,7 @@ public class DingTalkSendingUtilsV1 {
         
     }
 
-    public static OapiRobotSendResponse sendMarkdownV1_1(GroupConfig group, String title, String markdownText, List<String> mobileList){
+    public static OapiRobotSendResponse sendMarkdownV1(GroupConfig group, String title, String markdownText, List<String> mobileList){
         try {
             DingTalkClient client = new DefaultDingTalkClient(group.toString());
             return sendMessageByMarkdownAtByPhoneV1(client,title,markdownText,mobileList);
