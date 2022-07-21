@@ -9,6 +9,10 @@ import java.nio.charset.StandardCharsets;
 
 public class GroupConfig {
 
+    /**
+     * WEBHOOK 对应 发送消息群对应的webhook
+     * SECRET 对应 机器人测试群中的加签
+     */
     private String WEBHOOK;
     private String SECRET;
 
