@@ -11,13 +11,6 @@
 添加以下依赖以确保运行
 ```Java
         <dependency>
-            <groupId>com.jwq.robot.vtec</groupId>
-            <artifactId>Vtec</artifactId>
-            <version>0.1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/Vtec.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.8.4</version>
