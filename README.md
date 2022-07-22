@@ -120,7 +120,7 @@ DingTalkSendUtilsV1.sendMarkdownV1(group, "markdownTitle", "markdownText");
 ```
 ### **ActionCard格式发送方法**
 
-ActionCard类型消息除了包含**消息标题**与**同样支持markdown编辑格式的文本信息**以外，还多出了按钮内容、按钮链接和按钮排布，以及机器人头像的隐藏<br>
+ActionCard类型消息除了包含**消息标题**与**同样支持markdown编辑格式的文本信息**以外，还多出了机器人头像的隐藏以及**按钮模块**，其中包括了**按钮标题**、**按钮链接**和**按钮排布**<br>
 目前ActionCard暂不支持@功能
 ```Java
 /**
