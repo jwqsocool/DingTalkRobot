@@ -61,7 +61,7 @@ Text只包含普通文本, 所以在使用sendTextV1时，只需指定文本内�
 DingTalkSendingUtilsV1.sendTextV1(group, "text");
 ```
 效果如下图<br>
-![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1186.PNG)
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1186.PNG)<br>
 当然也可以通过输入想@的人的电话来实现@部分人的功能，还可以直接输入true来@全体成员<br>
         
 ```Java
@@ -74,8 +74,10 @@ DingTalkSendingUtilsV1.sendTextV1(group, "text");
 */
 
 DingTalkSendingUtilsV1.sendTextV1(group, "text", Arrays.asList("130********"));
+```
 效果如下图<br>
-![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1188.PNG)
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1188.PNG)<br>
+```
 /**
 * 发送普通文本消息
 * @param group      自定义组群        GroupConfig
