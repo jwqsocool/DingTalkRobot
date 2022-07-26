@@ -61,7 +61,7 @@ Text只包含普通文本, 所以在使用sendTextV1时，只需指定文本内�
 DingTalkSendingUtilsV1.sendTextV1(group, "text");
 ```
 效果如下图<br>
-![image](htps://github.com/jwqsocool/DinngTalkRobot)
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1186.PNG)
 当然也可以通过输入想@的人的电话来实现@部分人的功能，还可以直接输入true来@全体成员<br>
         
 ```Java
@@ -74,7 +74,8 @@ DingTalkSendingUtilsV1.sendTextV1(group, "text");
 */
 
 DingTalkSendingUtilsV1.sendTextV1(group, "text", Arrays.asList("130********"));
-
+效果如下图<br>
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1188.PNG)
 /**
 * 发送普通文本消息
 * @param group      自定义组群        GroupConfig
@@ -85,7 +86,8 @@ DingTalkSendingUtilsV1.sendTextV1(group, "text", Arrays.asList("130********"));
 
 DingTalkSendingUtilsV1.sendTextV1(group, "text", isAtAll);
 ```
-
+效果如下图<br>
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1187.PNG)<br>
 ### **Link格式发送方法sendLinkV1**
 
 link类型消息包含**消息标题**、**消息内容**、**点击消息后跳转的url**以及**插入图片的url**，但插入图片的url**不是必须的，可以不填** <br>
@@ -103,7 +105,8 @@ link类型消息包含**消息标题**、**消息内容**、**点击消息后跳
      
 DingTalkSendingUtilsV1.sendLinkV1(group, "urltitle", "urltext", "messageUrl"，"picurl");
 ```
-
+效果如下图<br>
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_0975.PNG)<br>
 ### **Markdown格式发送方法sendMarkdownV1**
 
 markdown类型消息包含**消息标题**与**支持markdown编辑格式的文本信息**，markdown格式具体要求参考钉钉开放文档, @规则与sendTextV1方法一致,就不做展示了
@@ -120,6 +123,8 @@ markdown类型消息包含**消息标题**与**支持markdown编辑格式的文�
 
 DingTalkSendUtilsV1.sendMarkdownV1(group, "markdownTitle", "markdownText");
 ```
+效果如下图<br>
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_0973.PNG)<br>
 ### **ActionCard格式发送方法**
 
 ActionCard类型消息除了包含**消息标题**与**同样支持markdown编辑格式的文本信息**以外，还多出了机器人头像的隐藏以及**按钮模块**，其中包括了**按钮标题**、**按钮链接**和**按钮排布**<br>
@@ -137,7 +142,8 @@ ActionCard类型消息除了包含**消息标题**与**同样支持markdown编�
 */
 DingTalkSendingUtilsV1.sendActioncardV1(group, title, actionCardText, btnTitle, btnUrl, btnOrientation, hideAvatar);     
 ```
-
+效果如下图<br>
+![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_0974.PNG)<br>
 ### **FeedCard格式发送方法**
 
 开发中
