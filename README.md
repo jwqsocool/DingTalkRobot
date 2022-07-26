@@ -60,6 +60,7 @@ Text只包含普通文本, 所以在使用sendTextV1时，只需指定文本内�
  */
 DingTalkSendingUtilsV1.sendTextV1(group, "text");
 ```
+
 当然也可以通过输入想@的人的电话来实现@部分人的功能，还可以直接输入true来@全体成员<br>
         
 ```Java
