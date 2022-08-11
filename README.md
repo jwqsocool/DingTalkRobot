@@ -77,7 +77,7 @@ DingTalkSendingUtilsV1.sendTextV1(group, "text", Arrays.asList("130********"));
 ```
 效果如下图<br>
 ![image](https://github.com/jwqsocool/DingTalkRobot/blob/main/image/IMG_1188.PNG)<br>
-```
+```Java
 /**
 * 发送普通文本消息
 * @param group      自定义组群        GroupConfig
