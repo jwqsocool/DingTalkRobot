@@ -9,7 +9,7 @@
 
 ### **maven依赖**
 添加以下依赖以确保运行
-```Java
+```xml
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
